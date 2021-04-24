@@ -28,11 +28,27 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+   -Counter2 is a first-class functions that is essentially
+  a value,whereas Counter1 is a higher-order function that passes
+  in a function as an argument which is named in this case counterMaker();
+  
   
   2. Which of the two uses a closure? How can you tell?
   
+   -Counter1 has a closure because It's a higher order function that passes
+  a child function through a parent function which in turn returns a new value
+  for the new value using a global variable. I could tell because it had a callback 
+  function,which implies it's a higher order function.
+
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+
+
+     counter1 is not the best practice because the nature of the closure utilizes 
+     global variables which may cause bugs in our code if we're building large web apps.
+     counter2 is actually preferable because it has a limited scoping that only works with
+     the scoping that the function has been provided with.thus Giving as a result cleaner
+     code that gives you less bugs.
 */
 
 // counter1 code
