@@ -39,11 +39,13 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   a child function through a parent function which in turn returns a new value
   for the new value using a global variable. I could tell because it had a callback 
   function,which implies it's a higher order function.
-
+<<<<<<< HEAD
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
-
-
+=======
+  3. In what scenario would the counter1 code be preferable? In what scenario would 
+     counter2 be better?  
+>>>>>>> Sebastian-Silva
      counter1 is not the best practice because the nature of the closure utilizes 
      global variables which may cause bugs in our code if we're building large web apps.
      counter2 is actually preferable because it has a limited scoping that only works with
@@ -98,19 +100,42 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+const inningVariable= inning();
+
+function finalScore(a , b){
+
+  function calcFinalScore(){
+    const totalScore= (inningVariable*b);
+    return totalScore;
+   }
+ const game={
+   home:'HOME',
+   homeScore: calcFinalScore(),
+   away:'AWAY',
+   awayScore: calcFinalScore()
+ } 
+ return "{"+game.home+": "+game.homeScore+","+game.away+": "+game.awayScore+"}";
 }
+console.log(finalScore(inningVariable,12));
+
+
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore() {
+  const match={
+    home:'HOME',
+    homeScore: inning(),
+    away:'AWAY',
+    awayScore: inning()
+  }
+  return `The score for ${match.home} is ${Number(match.homeScore)}, and the score
+  for ${match.away} is ${Number(match.awayScore)}`;
 }
-
+console.log(getInningScore());
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
 Use the scoreboard function below to do the following:
@@ -136,7 +161,6 @@ Use the scoreboard function below to do the following:
   "Inning 9: Away 1 - Home 0", 
   "Final Score: Away 11 - Home 12"  
 ]
-
   TIE example: invoking scoreboard(getInningScore,inning, 9) might return 
   an array of strings like this:
 [
@@ -153,11 +177,30 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+
+
+const getInningScoreVariable= getInningScore();
+
+
+
+/*const randomInt=(min,max) => Math.trunc(Math.random()*(max-min)+1)+min;*/
+//Above is a general formula that returns random numbers within a given range//Feel free 
+//to use it as a snippet.
+
+function randomInningNumber(){
+  return randomInt(0,10);
 }
 
+function scoreboard() {
+  const play={
+    inning:randomInningNumber(),
+    home:'HOME',
 
+
+  
+}
+}
+console.log(scoreboard());
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 
