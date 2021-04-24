@@ -190,24 +190,20 @@ const getInningScoreVariable= getInningScore();
 //Above is a general formula that returns random numbers within a given range//Feel free 
 //to use it as a snippet.
 
-randomInningNumber(){
+function randomInningNumber(){
   return randomInt(0,10);
 }
 
-
 function scoreboard() {
   const play={
+    inning:randomInningNumber(),
     home:'HOME',
-    homeScore: inning(),
-    homeInningScore=getInningScore(),
-    away:'AWAY',
-    awayScore: inning(),
-    awayInningScore=getInningScore(),
-    inningNumber= randomInningNumber()
-  }
+
+
+  
 }
-
-
+}
+console.log(scoreboard());
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 
