@@ -187,7 +187,8 @@ const getInningScoreVariable= getInningScore();
 
 
 /*const randomInt=(min,max) => Math.trunc(Math.random()*(max-min)+1)+min;*/
-//Above is a general formula that returns random numbers within a given range//
+//Above is a general formula that returns random numbers within a given range//Feel free 
+//to use it as a snippet.
 
 randomInningNumber(){
   return randomInt(0,10);
