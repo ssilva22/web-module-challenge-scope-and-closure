@@ -12,12 +12,12 @@
  * The following code is demonstrating a way of completing this task
  * It returns the string `foofoo`
 */
-
+/*
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
 console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
-
+*/
 // ⭐️ Example Challenge END ⭐️
 
 
@@ -77,11 +77,12 @@ Use the inning function below to do the following:
   
 NOTE: This will be a callback function for the tasks below
 */
+  const randomInt=(min,max) => Math.trunc(Math.random()*(max-min)+1)+min;
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+return randomInt(-1,2);
 }
-
+console.log(inning());
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
@@ -159,7 +160,7 @@ function scoreboard(/* CODE HERE */) {
 
 
 
-/* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
+/* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 
 function foo(){
   //console.log('its working');
   return 'bar';
@@ -174,3 +175,4 @@ export default{
   getInningScore,
   scoreboard,
 }
+*/
