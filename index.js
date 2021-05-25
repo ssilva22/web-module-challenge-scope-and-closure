@@ -39,13 +39,10 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   a child function through a parent function which in turn returns a new value
   for the new value using a global variable. I could tell because it had a callback 
   function,which implies it's a higher order function.
-<<<<<<< HEAD
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
-=======
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
->>>>>>> Sebastian-Silva
      counter1 is not the best practice because the nature of the closure utilizes 
      global variables which may cause bugs in our code if we're building large web apps.
      counter2 is actually preferable because it has a limited scoping that only works with
