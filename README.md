@@ -9,7 +9,10 @@ The module challenge is the afternoon project or assignment that students work t
 ## Objectives
 
 - Explain function scope
+=Function scope is the extent to which a function is executed.
+
 - Describe what closure is, how closure is created in a program and why it is important to understand closures in JavaScript  
+-A closure is the combination of a function along with their sorrounding state which gives you access yo an outer scope from an inner function. It's important to understand closures in JS because they're a huge component of the program and thus by understanding it  the debugging process is much easier.
 
 ## Introduction
 
@@ -43,6 +46,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+-Closure is the scope of a function.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -64,8 +68,12 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+- when declaring dansRoll() we can see how the declaration has access to the scope of the personalDice() function. WHich is the closure of said function.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+-It's always the same because it's and empty declaration but if you add something to the parentheses you will get a different result
 c. What is the lexical scope of `newRoll`? 
+personalDice() and its inner functionality.
 
 
 ### Task 3 - Stretch Goals
@@ -84,6 +92,9 @@ addSix(21); // returns 27
 
 2. Research the differences between functional programming and object oriented programming. Then, describe the pros and cons of functional programming vs object-oriented programming. This is a common interview question and great practice!
 
+-OOP organizes code as a unit which contains the info and the operation that belongs to the same concept. The pieces of the info that reside in the unit are called an attribut or a state.This could happen through encapsulation,abstraction,Inheritance and Polymorphism. OOP is better for organizing large chunks of data in a disorganized way that is scalable and easier to maintain.
+
+Procedural programming is good for many operations on fixed data that is immutable and is declarative and focuses on what needs to be done.
 ## Resources
 
 📚 [Scope and Closures Guide](https://css-tricks.com/javascript-scope-closures/)
