@@ -12,12 +12,12 @@
  * The following code is demonstrating a way of completing this task
  * It returns the string `foofoo`
 */
-/*
+
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
 console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
-*/
+ 
 // ⭐️ Example Challenge END ⭐️
 
 
@@ -42,12 +42,7 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
 
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
-     -Counter1 is better for OOP and working with larger chunks of data that need much structure to them.
-     Counter 2 would be better to use in the context of some use cases where you only need such function a
-     couple of time.
-     
-  3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+
 
      counter1 is not the best practice because the nature of the closure utilizes 
      global variables which may cause bugs in our code if we're building large web apps.
@@ -82,10 +77,10 @@ Use the inning function below to do the following:
   
 NOTE: This will be a callback function for the tasks below
 */
-  const randomInt=(min,max) => Math.trunc(Math.random()*(max-min)+1)+min;
+
 
 function inning(){
-return randomInt(-1,2);
+return Math.floor(Math.random() * Math.floor(3));
 }
 console.log(inning());
 
@@ -103,23 +98,19 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-const inningVariable= inning();
-
-function finalScore(a , b){
-
-  function calcFinalScore(){
-    const totalScore= (inningVariable*b);
-    return totalScore;
-   }
- const game={
-   home:'HOME',
-   homeScore: calcFinalScore(),
-   away:'AWAY',
-   awayScore: calcFinalScore()
- } 
- return "{"+game.home+": "+game.homeScore+","+game.away+": "+game.awayScore+"}";
+function finalScore(inningCb, inningsNumber){
+  let homeScore= 0;
+  let awayScore=0;
+for(let i = 0 ;i < inningsNumber ; i++){
+homeScore= homeScore + inningCb();
+awayScore= awayScore + inningCb();
 }
-console.log(finalScore(inningVariable,12));
+return {
+  Home: homeScore,
+  Away: awayScore,
+}
+}
+console.log(finalScore(inning,12));
 
 
 
@@ -128,17 +119,12 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore() {
-  const match={
-    home:'HOME',
-    homeScore: inning(),
-    away:'AWAY',
-    awayScore: inning()
+  function getInningScore(inningCB) {
+  return {
+      Home: inning(),
+      Away: inning(),
+    }
   }
-  return `The score for ${match.home} is ${Number(match.homeScore)}, and the score
-  for ${match.away} is ${Number(match.awayScore)}`;
-}
-console.log(getInningScore());
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
 Use the scoreboard function below to do the following:
@@ -191,7 +177,7 @@ const getInningScoreVariable= getInningScore();
 //to use it as a snippet.
 
 function randomInningNumber(){
-  return randomInt(0,10);
+  //return randomInt(0,10);
 }
 
 function scoreboard() {
@@ -206,7 +192,7 @@ function scoreboard() {
 console.log(scoreboard());
 
 
-/* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 
+ //🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 
 function foo(){
   //console.log('its working');
   return 'bar';
@@ -221,4 +207,4 @@ export default{
   getInningScore,
   scoreboard,
 }
-*/
+
